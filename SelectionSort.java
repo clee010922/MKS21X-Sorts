@@ -19,4 +19,16 @@ public class SelectionSort {
     }
   }
 
+  public static String printArray(int[] ary) {
+    String result = "[";
+    for (int i = 0; i < ary.length; i++) {
+      result += ary[i];
+      if (i != ary.length - 1)
+        result += ", ";
+    }
+    result += "]";
+    return result;
+  }
+
+
 }
