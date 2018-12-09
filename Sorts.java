@@ -4,7 +4,6 @@ public class Sorts {
   public static void selectionSort(int[] ary) {
     int min = ary[0];
     int index = 0;
-
     for (int i = 0; i < ary.length; i++) {
       min = ary[i];
       index = i;
@@ -21,18 +20,13 @@ public class Sorts {
 
   public static void bubbleSort(int[] data) {
     int temp = 0;
-    boolean sorted = false;
-    while (!sorted) {
-      for (int i = 0; i < data.length-1; i++) {
-        if (data[i] > data[i+1]) {
-          temp = data[i];
-          data[i] = data[i+1];
-          data[i+1] = temp;
+    for (int i = 0; i < data.length; i++) {
+      for (int x = 0; x < data.length - 1; x++) {
+        if (data[x] > data[x+1]) {
+          temp = data[x];
+          data[x] = data[x+1];
+          data[x+1] = temp;
         }
-      }
-      for (int i = 0; i < data.length-1; i++) {
-        if (data[i] < data[i+1])
-          sorted = true;
       }
     }
   }
@@ -49,15 +43,22 @@ public class Sorts {
   }
 
   public static void main(String[] args) {
+
     int[] test = {4, 3, 2, 1, 4, 3, 2, 1};
     int[] test2 = {-1, 50, 2, 900000, -99999, 50, 0};
-    int[] test3 = {5, 4, 3, 2, 1, 0};
+    int[] test3 = {4, 3, 2, 1, 4, 3, 2, 1};
+    int[] test4 = {-1, 50, 2, 900000, -99999, 50, 0};
+
     selectionSort(test);
     selectionSort(test2);
     bubbleSort(test3);
+    bubbleSort(test4);
+
     System.out.println(printArray(test));
     System.out.println(printArray(test2));
     System.out.println(printArray(test3));
+    System.out.println(printArray(test4));
   }
+
 
 }
