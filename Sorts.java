@@ -31,6 +31,26 @@ public class Sorts {
     }
   }
 
+  public static void insertionSort(int[] data) {
+    int temp = 0;
+    int index = 0;
+    int newIndex = 0;
+    for (int i = 0; i < data.length-1; i++) {
+      if (data[i] > data[i+1]) {
+        temp = data[i+1];
+        index = i+1;
+        for (int x = 0; x < data.length; x++) {
+          if (temp < data[x])
+            newIndex = x;
+        }
+        for (int j = index; j > newIndex; j--) {
+          data[j] = data[j-1];
+        }
+        data[newIndex] = temp;
+      }
+    }
+  }
+
   public static String printArray(int[] ary) {
     String result = "[";
     for (int i = 0; i < ary.length; i++) {
@@ -52,7 +72,7 @@ public class Sorts {
     selectionSort(test);
     selectionSort(test2);
     bubbleSort(test3);
-    bubbleSort(test4);
+    insertionSort(test4);
 
     System.out.println(printArray(test));
     System.out.println(printArray(test2));
