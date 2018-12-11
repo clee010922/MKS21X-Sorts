@@ -51,6 +51,10 @@ public class Sorts {
     }
   }
 
+  //for(int i = 1; .....)
+  //int c;
+  //for(int c = i; c > 0 && ary[c] < ary[c-1]; c--)
+
   public static String printArray(int[] ary) {
     String result = "[";
     for (int i = 0; i < ary.length; i++) {
